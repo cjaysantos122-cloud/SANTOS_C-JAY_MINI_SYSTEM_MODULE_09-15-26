@@ -1,0 +1,145 @@
+# SECTION 2: HYPERBOLIC FUNCTION
+def hyperbolic menu():
+print_header("HYPERBOLIC FUNCTUION")
+print("""
+1. Compute sinh, cosh, tanh, of a value
+2. Compute asinh, acosh, atanh, of a value
+0. Back to Main Menu
+""")
+choice = safe_input("Enter your choice: ").strip()
+
+if choice == "1":
+  x = get_float(Enter a value x: ")
+  print(f" sinh({x}) = {math.sinh(x)}")
+  print(f" cosh({x}) = {math.cosh(x)}")
+  print(f" tank({x}) = {math.tanh(x)}")
+
+elif choice == "2":
+  x = get_float("Enter a value x: ")
+  print()
+  print(f" asinh({x}) = {math.asinh(x)}")
+  try;
+  print(f" acosh({x}) = math.acosh(x)}")
+except ValueError:
+print(" atanh(x) needs -1 < x < 1. skipped.")
+
+elif choice == "0":
+return
+else:
+     print("\nInvalid choice.")
+pause()
+
+# SECTION 3: EXPONENTIATION AND LOGARITHMS
+
+def exponet_menu():
+  print(header("EXPONENTIAL AND LOGARITHMS FUNCTIONS")
+  print("""
+  1.Show the value of e
+  2.Compute exp(x)
+  3.Compute the natural log, log10, and log2 of a value
+  4.compute log(x, base) with a custom base
+  5.Compute pow (x, y) - built-in vs math.pow
+  0.Back to Main Menu
+  """)
+  choice = safe_input("Enter youchoice:").stripo()
+
+  if choice == '1":
+  print(f"\nmath.e = {math.e}")
+  
+elif choice == "2":
+x = get_float("Enter x: ")
+print(f"\necp({x}) = e^{x} = {amth.exp(x)}")
+
+elif choice == "3":
+x = get_float("Enter a positive number x: ")
+try:
+  print(f"\n log({x})   = {math.log(x)}
+  (natural log, base e)")
+  print(f" log10({10}) = {math.log10(10)}")
+  print(f" log2({10}) = {math.log2(x)}")
+except ValueError:
+  print(" logarithms require x > 0. Please tryagain.")
+elif choice == "4":
+x = get float("Enter x (must be > 0): ")
+b = get_float("Enter the base b (must be > 0 and ! = 1): ")
+try:\
+  print(f"\nlog({x}, base=b{b}) = {math.log(x,b)}")
+except (ValueError, ZeroDivisionError):
+  print(" Invalid input for a logarithm with that base.")
+elif choice == "5":
+x = get_float("Enter the base x: ")
+y = get_float("Enter the exponent y: ")
+print(f"\n Built-in pow({x}, {y}) = {pow(x, y)}")
+print(f" math.pow({x}, {y})     = {math.pow(x,y)}")
+print(" (Note: pow() can return an int for integer inputs: "math.pow() always returns a float.)")
+
+elif choice == "0":
+    return
+else:
+print("\nInvalid choice.")
+
+pause()
+#SECTION 4: GENERAL-PURPOSE MATH FUNCTION
+def general_menu():
+  print_header("GENERAL-PURPOSE MATH FUNCTION")
+  print(""""
+  1. Compute ceil, flooor, and trunc of a value
+  2.Compute a factorial
+  3.Compute the hypotenuse of a right triangle
+  0.Back to MAin Menu
+  """)
+  choice = safe_input("Enter your choice: "),strip()
+
+  if choice == "1":
+    x = get_float(enter a decimal number x: ")
+    print(f\n ceil({x}) = {math.ceil(x)}")
+    print(f" floor({x}) = {math.floor(x)}")
+    print(f" trunc({x}) = {math.trunc(x)}")
+  elif choice == "2":
+    n = get_int("Enter a non-negative whole number: ")
+    try:
+      print(f"\n {n}! = {math.factorial(n)}")
+    except VAlueError:
+      print(" factorial() requires a non-negative integer.")
+
+  elif choice == "3":
+    x = get_float("Enter the length of leg x: ")
+    y = get_float("Enter the length of leg y: ")
+    print(f"\n hypot({x}), {y}) = {math.hypot(x, y)}")
+    print(f" (SAmge idea as sqrt({x}**2) = "
+          f"{math.sqrt(x**2 + y**2)}, but hypot() is more precise.)")
+
+  elif choice == "0":
+    return
+  else:
+    print("\nInvalid choice.")
+
+  pause()
+ # SECTION 5: THE RANDOM MODULE
+def random_menu():
+  print_header("THE RANDOM MODULE")
+  print("""
+  1. set a seed (so result can be repeated)
+  2. Generate a number with randrange()
+  3. Generate a number with randit()
+  4. Pick a random item from a list with choice()
+  5. Draw several UNIQUE items from from a list with sample() (like a lottery)
+  0. Back to Main Menu
+  """)
+  choice = safe_input("Enter your choice: ").strip()
+
+  if choice == "1":
+    pick = safe_input("Type 'time' to seed with current time, or type an "
+                      "integer to seed manually:").strip()
+    if pick.lower() == "time":
+      random.seed()
+      print("\nSeed set using the current time. Every run will now"
+          "differ.")
+    else:
+      try:
+        random.seed(int(pick))
+        print(f"\nseed set to {int(pick)}. The random sequence "
+             f"produced from now on is repeatable.")
+      except ValueError:
+        print("\nInvalid integer. seed not changed.")
+    elif choice == "2":
